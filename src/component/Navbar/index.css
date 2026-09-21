@@ -18,7 +18,7 @@
 .navbar__brand {
 	display: flex;
 	text-decoration: none;
-	width: 160px;
+	width: 175px; /* Adjusted slightly to fit the updated logo proportions from the second image */
 }
 
 .navbar__brand img {
@@ -64,6 +64,7 @@
 	transform-origin: left;
 }
 
+/* Updated active state to match the gold text color shown on the 'HOME' link in the reference image */
 .navbar__links a.is-active { color: var(--navbar-gold); }
 
 .navbar__actions { display: flex; gap: 24px; }
@@ -94,7 +95,7 @@
 
 @media (max-width: 760px) {
 	.navbar { height: 76px; padding: 0 22px; }
-	.navbar__brand { width: 145px; }
+	.navbar__brand { width: 155px; }
 
 	.navbar__toggle {
 		background: none;
