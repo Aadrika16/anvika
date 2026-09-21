@@ -1,0 +1,155 @@
+.signature-piece {
+  background: #9d3e16;
+  color: #fff5e5;
+  height: min(700px, 36.5vw);
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+
+.signature-piece__image,
+.signature-piece__shade {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.signature-piece__image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.signature-piece__shade {
+  background: linear-gradient(90deg, rgba(88, 27, 8, 0.37) 0%, rgba(88, 27, 8, 0.04) 63%, rgba(88, 27, 8, 0.08) 100%);
+}
+
+.signature-piece__content {
+  left: 6.3vw;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.signature-piece__eyebrow {
+  align-items: center;
+  color: #e6bc72;
+  display: flex;
+  font-size: 13px;
+  gap: 19px;
+  letter-spacing: 5px;
+  margin: 0 0 22px;
+  text-transform: uppercase;
+}
+
+.signature-piece__eyebrow span {
+  background: rgba(255, 240, 213, 0.75);
+  display: block;
+  height: 1px;
+  width: 51px;
+}
+
+.signature-piece h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(52px, 5vw, 92px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 0.98;
+  margin: 0 0 39px;
+}
+
+.signature-piece__button {
+  align-items: center;
+  background: #faedd5;
+  border-radius: 100px;
+  color: #b37b3e;
+  display: inline-flex;
+  font-size: 13px;
+  gap: 23px;
+  justify-content: space-between;
+  letter-spacing: 3px;
+  min-width: 202px;
+  padding: 17px 29px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 180ms ease, gap 180ms ease;
+}
+
+.signature-piece__button span {
+  font-size: 23px;
+  line-height: 0;
+}
+
+.signature-piece__button:hover {
+  background: #fff;
+  gap: 33px;
+}
+
+@media (max-width: 900px) {
+  .signature-piece {
+    height: 620px;
+    min-height: 0;
+  }
+
+  .signature-piece__image {
+    object-position: 64% center;
+  }
+
+  .signature-piece__shade {
+    background: linear-gradient(90deg, rgba(64, 19, 7, 0.65) 0%, rgba(64, 19, 7, 0.14) 100%);
+  }
+
+  .signature-piece__content {
+    left: 7vw;
+  }
+}
+
+@media (max-width: 520px) {
+  .signature-piece {
+    height: 560px;
+  }
+
+  .signature-piece__image {
+    object-position: 71% center;
+  }
+
+  .signature-piece__shade {
+    background: linear-gradient(0deg, rgba(50, 16, 5, 0.72) 0%, rgba(50, 16, 5, 0.16) 100%);
+  }
+
+  .signature-piece__content {
+    bottom: 66px;
+    left: 24px;
+    top: auto;
+    transform: none;
+  }
+
+  .signature-piece__eyebrow {
+    font-size: 9px;
+    gap: 10px;
+    letter-spacing: 3px;
+  }
+
+  .signature-piece__eyebrow span {
+    width: 27px;
+  }
+
+  .signature-piece h2 {
+    font-size: 48px;
+    letter-spacing: -1px;
+    margin-bottom: 28px;
+  }
+
+  .signature-piece__button {
+    font-size: 10px;
+    min-width: 180px;
+    padding: 15px 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signature-piece__button {
+    transition: none;
+  }
+}

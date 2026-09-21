@@ -1,0 +1,143 @@
+.story {
+  align-items: center;
+  background: #f6e9d1;
+  color: #3a2414;
+  display: grid;
+  gap: clamp(70px, 9vw, 150px);
+  grid-template-columns: minmax(390px, 0.9fr) minmax(420px, 1.1fr);
+  min-height: 720px;
+  padding: 70px 7.3vw;
+}
+
+.story__media-frame {
+  border: 1px solid #906744;
+  margin: 0;
+  padding: 18px;
+  position: relative;
+}
+
+.story__media-frame::after {
+  border: 1px solid #906744;
+  content: '';
+  inset: -19px -1px 19px 1px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.story__image {
+  display: block;
+  height: min(696px, 47vw);
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.story__content {
+  max-width: 710px;
+}
+
+.story__eyebrow {
+  align-items: center;
+  color: #9b6a28;
+  display: flex;
+  font-size: 13px;
+  gap: 19px;
+  letter-spacing: 5px;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+.story__eyebrow span {
+  background: #b18a58;
+  display: block;
+  height: 1px;
+  width: 50px;
+}
+
+.story h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(48px, 4.3vw, 76px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin: 0 0 38px;
+}
+
+.story__copy {
+  color: #635343;
+  font-size: clamp(16px, 1.2vw, 21px);
+  line-height: 1.45;
+  max-width: 690px;
+}
+
+.story__copy p {
+  margin: 0 0 30px;
+}
+
+.story__copy p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .story {
+    gap: 58px;
+    grid-template-columns: 1fr;
+    padding: 90px 8vw;
+  }
+
+  .story__media-frame {
+    margin: 0 auto;
+    max-width: 620px;
+    width: 100%;
+  }
+
+  .story__image {
+    height: 620px;
+  }
+
+  .story__content {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 520px) {
+  .story {
+    gap: 44px;
+    padding: 70px 24px;
+  }
+
+  .story__media-frame {
+    padding: 11px;
+  }
+
+  .story__media-frame::after {
+    inset: -12px -1px 12px 1px;
+  }
+
+  .story__image {
+    height: 440px;
+  }
+
+  .story__eyebrow {
+    font-size: 9px;
+    gap: 10px;
+    letter-spacing: 3px;
+  }
+
+  .story__eyebrow span {
+    width: 27px;
+  }
+
+  .story h2 {
+    font-size: 45px;
+    letter-spacing: -1px;
+    margin-bottom: 28px;
+  }
+
+  .story__copy {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+}
