@@ -8,7 +8,7 @@ function Navbar() {
 	return (
 		<header className="navbar">
 			<a className="navbar__brand" href="#home" aria-label="Anvika Fine Jewellery home">
-				<img src="/anvika-logo.svg" alt="Anvika Fine Jewellery" />
+				<img src="/logo/logo2.png" alt="Anvika Fine Jewellery" />
 			</a>
 
 			<button
