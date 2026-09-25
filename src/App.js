@@ -9,31 +9,31 @@ import Footer from './component/Footer';
 
 const slides = [
   {
-    eyebrow: 'Anvika fine jewellery',
-    title: 'Colour in its\nfinest form',
-    description: 'Where vivid stones meet\ntimeless elegance.',
-    action: 'Explore jewellery',
+    eyebrow: 'Anvika Fine Jewellery',
+    title: 'Colour In Its Finest Form',
+    description: 'Where vivid stones meet timeless elegance.',
+    action: 'Explore Jewellery',
     image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=2200&q=85',
     position: 'center',
-      alt: 'Gold jewellery arranged on a warm neutral background',
+    alt: 'Gold jewellery arranged on a warm neutral background',
   },
   {
-    eyebrow: 'The heritage edit',
-    title: 'Beautiful,\nby design',
-    description: 'Jewellery that speaks\nwithout saying a word.',
-    action: 'Explore the collection',
+    eyebrow: 'The Heritage Edit',
+    title: 'Beautiful By Design',
+    description: 'Jewellery that speaks without saying a word.',
+    action: 'Explore Collection',
     image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=2200&q=85',
     position: 'center right',
-      alt: 'Fine jewellery necklace and earrings',
+    alt: 'Fine jewellery necklace and earrings',
   },
   {
-    eyebrow: 'Made for your moment',
-    title: 'A little\nmore luminous',
-    description: 'Distinctive details for\nlife’s most beautiful days.',
-    action: 'Discover the edit',
+    eyebrow: 'Made For Your Moment',
+    title: 'A Little More Luminous',
+    description: "Distinctive details for life's most beautiful days.",
+    action: 'Discover The Edit',
     image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=2200&q=85',
     position: 'center',
-      alt: 'Close-up of elegant gold earrings',
+    alt: 'Close-up of elegant gold earrings',
   },
 ];
 
@@ -88,31 +88,37 @@ function HeroCarousel() {
           </div>
         ))}
       </div>
-      <div className="hero-content">
-        <p className="hero-eyebrow">{slide.eyebrow}</p>
-        <h1>{slide.title.split('\n').map((line) => <span key={line}>{line}</span>)}</h1>
-        <p className="hero-description">{slide.description.split('\n').map((line) => <span key={line}>{line}</span>)}</p>
-        <span className="hero-rule" />
-        <a className="hero-button" href="#collections">
-          {slide.action}
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-      <div className="carousel-controls">
-        <button type="button" aria-label="Previous slide" onClick={() => goToSlide(activeSlide - 1)}>←</button>
-        <div className="carousel-dots">
-          {slides.map((item, index) => (
-            <button
-              type="button"
-              className={index === activeSlide ? 'is-active' : ''}
-              aria-label={`Go to slide ${index + 1}`}
-              aria-current={index === activeSlide ? 'true' : undefined}
-              key={item.title}
-              onClick={() => goToSlide(index)}
-            />
-          ))}
+
+      <div className="hero-inner">
+        <div className="hero-content" key={activeSlide}>
+          <div className="hero-eyebrow-wrapper">
+            <span className="hero-eyebrow-line" />
+            <p className="hero-eyebrow">{slide.eyebrow}</p>
+          </div>
+          <h1>{slide.title}</h1>
+          <p className="hero-description">{slide.description}</p>
+          <a className="hero-button" href="#collections">
+            <span>{slide.action}</span>
+            <span className="hero-button__arrow" aria-hidden="true">→</span>
+          </a>
         </div>
-        <button type="button" aria-label="Next slide" onClick={() => goToSlide(activeSlide + 1)}>→</button>
+
+        <div className="carousel-controls">
+          <button type="button" aria-label="Previous slide" onClick={() => goToSlide(activeSlide - 1)}>←</button>
+          <div className="carousel-dots">
+            {slides.map((item, index) => (
+              <button
+                type="button"
+                className={index === activeSlide ? 'is-active' : ''}
+                aria-label={`Go to slide ${index + 1}`}
+                aria-current={index === activeSlide ? 'true' : undefined}
+                key={item.title}
+                onClick={() => goToSlide(index)}
+              />
+            ))}
+          </div>
+          <button type="button" aria-label="Next slide" onClick={() => goToSlide(activeSlide + 1)}>→</button>
+        </div>
       </div>
     </section>
   );
